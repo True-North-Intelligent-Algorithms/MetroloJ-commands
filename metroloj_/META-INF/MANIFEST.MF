@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Ant-Version: Apache Ant 1.8.1
+Created-By: 1.6.0_24-b07-334-10M3326 (Apple Inc.)
+Main-Class: Test
+Class-Path: lib/ij.jar lib/iText-2.1.4.jar
+X-COMMENT: Main-Class will be added automatically by build
+

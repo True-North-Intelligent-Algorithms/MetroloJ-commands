@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.tnia.metroloj</groupId>
+	<artifactId>Metroloj-commands</artifactId>
+	<version>1.0-SNAPSHOT</version>
+
+	<name>Metroloj-commands</name>
+	<!-- FIXME change it to the project's website -->
+	<url>http://www.truenorth-ia.com</url>
+
+	<parent>
+		<groupId>org.scijava</groupId>
+		<artifactId>pom-scijava</artifactId>
+		<version>26.0.0</version>
+		<relativePath />
+	</parent>
+
+
+	<properties>
+		<scijava.jvm.version>1.8</scijava.jvm.version>
+		<clearcl.version>0.3.6</clearcl.version>
+		<cleargl.version>1.0.18</cleargl.version>
+		<clearvolume.version>1.3.20</clearvolume.version>
+		<CoreMem.version>0.3.2</CoreMem.version>
+		<enforcer.skip>true</enforcer.skip>
+	</properties>
+
+	<repositories>
+		<repository>
+			<id>imagej.public</id>
+			<name>ImageJ</name>
+			<url>https://maven.imagej.net/content/groups/public</url>
+		</repository>
+	</repositories>
+	<dependencies>
+		<dependency>
+			<groupId>net.imagej</groupId>
+			<artifactId>imagej</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>net.imagej</groupId>
+			<artifactId>imagej-legacy</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>net.imagej</groupId>
+			<artifactId>imagej-ops</artifactId>
+			<version>0.41.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>net.imagej</groupId>
+			<artifactId>imagej-ops</artifactId>
+			<version>0.43.2</version>
+			<type>test-jar</type>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>metroloJ</groupId>
+			<artifactId>metroloJ</artifactId>
+			<version>1.0</version>
+			<scope>system</scope>
+			<systemPath>${basedir}/metroloj_.jar</systemPath>
+		</dependency>
+
+		<!-- Imglib2 dependencies -->
+		<dependency>
+			<groupId>net.imglib2</groupId>
+			<artifactId>imglib2</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/io.scif/scifio -->
+
+		<dependency>
+			<groupId>io.scif</groupId>
+			<artifactId>scifio</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>io.scif</groupId>
+			<artifactId>scifio-bf-compat</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>ome</groupId>
+			<artifactId>formats-bsd</artifactId>
+		</dependency>
+	
+		<!-- The formats-gpl component adds support for proprietary formats. -->
+		<dependency>
+			<groupId>ome</groupId>
+			<artifactId>formats-gpl</artifactId>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<!-- disable the enforcer plugin -->
+				<artifactId>maven-enforcer-plugin</artifactId>
+				<configuration>
+					<skip>True</skip>
+				</configuration>
+				<!-- allow snapshots -->
+				<executions>
+					<execution>
+						<id>enforce-no-snapshots</id>
+						<phase>none</phase>
+					</execution>
+				</executions>
+			</plugin>
+
+		</plugins>
+	</build>
+
+</project>
